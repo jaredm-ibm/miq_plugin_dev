@@ -1,13 +1,73 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "service_dialog.json",
+  "required": [
+    ":description",
+    ":display"
+  ],
   "properties": {
     ":description": { "type": "string", "default": "General"},
     ":fields": {
       "type": "object",
-      "required": [],
       "properties": {
-
+        ":vm_filter": {"$ref": "fields.json#string_type"},
+        ":src_vm_id": {"$ref": "fields.json#string_type"},
+        ":provistion_type": {"$ref": "fields.json#string_type"},
+        ":linked_clone": {"$ref": "fields.json#string_type"},
+        ":snapshot": {"$ref": "fields.json#string_type"},
+        ":number_of_vms": {
+          "description": "The number of the vms to be created. Fill out the values with integers.",
+          "type": "object",
+          "required": [
+            ":values",
+            ":description",
+            ":required",
+            ":display",
+            ":default",
+            ":data_type"
+          ],
+          "properties": {
+            ":values": {
+              "type": "object",
+              "required": ["1"],
+              "properties": {
+                "1": {"type": "integer", "default": 1}
+              }
+            },
+            ":description": { "type": "string", "default": "Number of Instances" },
+            ":required": { "type": "boolean", "default": false},
+            ":display": { "type": "string", "default": ":edit"},
+            ":default": { "type": "integer", "default": 1},
+            ":data_type": { "type": "string", "default": ":integer"}
+          }
+        },
+        ":vn_name": {
+          "description": "The name of the vms to be created.",
+          "type":"object",
+          "required": [
+            ":description",
+            ":required_method",
+            ":required_regex",
+            ":required",
+            ":display",
+            ":data_type",
+            ":min_length",
+            ":max_length"
+          ],
+          "properties": {
+            ":description": {"type": "string", "default": "Instance Name"},
+            ":required_method": { "type": "string", "default": ":validate_regex"},
+            ":required_regex": { "type": "string", "default": "!ruby/regexp /^[a-zA-Z]+$/"},
+            ":required": { "type": "boolean", "default": true},
+            ":display": { "type": "string", "default": ":edit"},
+            ":data_type": { "type": "string", "default": ":string"},
+            ":min_length": { "type": "integer", "default": 1 },
+            ":max_length": { "type": "integer", "default": 30 }
+          }
+        },
+        ":vm_description": {"$ref": "fields.json#string_type"},
+        ":vm_prefix": {"$ref": "fields.json#string_type"}
       }
+    }
   }
 }
