@@ -14,9 +14,6 @@
         ":description"
       ],
       "properties": {
-        ":description": {
-          "type":"string"
-        },
         ":display": {
           "$ref": "cloud_manager_provision/fields.json#display_field",
           "default": ":show",
@@ -62,7 +59,7 @@
           "items": {
             "type": "string",
             "enum": [
-              ":requestor",
+              ":requester",
               ":purpose",
               ":service",
               ":volumes",
@@ -77,10 +74,10 @@
         ":dialogs": {
           "type": "object",
           "properties": {
-            ":requestor": {
+            ":requester": {
               "allOf": [
                 {"$ref": "#/definitions/container"},
-                {"$ref": "cloud_manager_provision/requestor_dialog.json"}
+                {"$ref": "cloud_manager_provision/requester_dialog.json"}
               ]
             },
             ":purpose": {
@@ -117,6 +114,12 @@
               "allOf": [
                 {"$ref": "#/definitions/container"},
                 {"$ref": "cloud_manager_provision/schedule_dialog.json"}
+              ]
+            },
+            ":service": {
+              "allOf": [
+                {"$ref": "#/definitions/container"},
+                {"$ref": "cloud_manager_provision/service_dialog.json"}
               ]
             }
           }
