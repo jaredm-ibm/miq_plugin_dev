@@ -1,0 +1,19 @@
+{
+  "schema": "http://json-schema.org/draft-07/schema#",
+  "id": "schedule_dialog.json",
+  "properties": {
+    ":description": { "type": "string", "default": "Schedule"},
+    ":fields": {
+      "type": "object",
+      "required": [],
+      "properties": {
+        ":schedule_type": {"$ref": "fields.json#string_type"},
+        ":schedule_time": {"$ref": "fields.json#string_type"},
+        ":stateless": {"$ref": "fields.json#string_type"},
+        ":vm_auto_start": {"$ref": "fields.json#string_type"},
+        ":retirement": {"$ref": "fields.json#string_type"},
+        ":retirement_warn": {"$ref": "fields.json#string_type"}
+      }
+    }
+  }
+}

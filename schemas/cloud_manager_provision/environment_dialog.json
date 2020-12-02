@@ -1,0 +1,30 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "environment_dialog.json",
+  "properties": {
+    ":description": {
+      "type": "string",
+      "default": "Environment"
+    },
+    ":fields": {
+      "type": "object",
+      "required": [
+        ":placement_auto"
+      ],
+      "properties": {
+        ":placement_auto": { "$ref": "fields.json#string_type" },
+        ":host_filter": { "$ref": "fields.json#string_type" },
+        ":placement_host_name": { "$ref": "fields.json#string_type" },
+        ":cloud_tenant": { "$ref": "fields.json#string_type" },
+        ":availability_zone_filter": {"$ref": "fields.json#string_type"},
+        ":placement_availability_zone": {"$ref": "fields.json#string_type"},
+        ":cloud_network_selection_method": {"$ref": "fields.json#string_type"},
+        ":cloud_network": {"$ref": "fields.json#string_type"},
+        ":network_port": {"$ref": "fields.json#string_type"},
+        ":security_groups": {"$ref": "fields.json#string_type"},
+        ":floating_ip_address": {"$ref": "fields.json#string_type"},
+        ":resource_group": {"$ref": "fields.json#string_type"}
+      }
+    }
+  }
+}

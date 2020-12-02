@@ -1,0 +1,36 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "description": "",
+  "type": "object",
+  "properties": {
+    ":description": {
+      "$ref": "fields.json#description_field",
+      "default": "Purpose"
+    },
+    ":fields": {
+      "type": "object",
+      "properties": {
+        ":vm_tags": {
+          "type": "object",
+          "properties": {
+            ":required_method": { "type": "string"},
+            ":description": {"type": "string", "default": "Tags"},
+            ":required": {"type": "boolean", "default": false},
+            ":options": {
+              "type": "object",
+              "properties": {
+                ":include": {"type": "array" },
+                ":order": {"type": "array" },
+                ":single_select": {"type": "array" },
+                ":exclude": {"type": "array" }
+              }
+            },
+            ":display": {"type": "string", "default": ":edit"},
+            ":required_tags": {"type": "array" },
+            ":data_type": {"type": "string", "default": ":integer"}
+          }
+        }
+      }
+    }
+  }
+}

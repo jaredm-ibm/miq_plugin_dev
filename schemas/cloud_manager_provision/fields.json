@@ -1,0 +1,78 @@
+{
+  "$id": "fields.json",
+  "description_field": {
+    "$id": "#description_field",
+    "type":"string"
+  },
+  "required_field": {
+    "$id": "#required_field",
+    "type":"boolean"
+  },
+  "display_field": {
+    "$id": "#required_field",
+    "type":"string",
+    "default": ":edit",
+    "enum": [":edit", ":hide", ":show"]
+  },
+  "data_type_field": {
+    "$id": "#data_type_field",
+    "type":"string",
+    "enum": [":string", ":boolean", ":integer"]
+  },
+  "common_fields": {
+    "$id": "#common_fields",
+    "type": "object",
+    "description": "string controls",
+    "properties": {
+      ":description": {"$ref": "#description_field"},
+      ":required": {"$ref": "#required_field"},
+      ":display": {"$ref": "#display_field"},
+      ":data_type": {"$ref": "#data_type_field"}
+    }
+  },
+  "string_type": {
+    "$id": "#string_type",
+    "type": "object",
+    "description": "string controls",
+    "$ref": "#common_fields"
+  },
+  "tree_type": {
+    "$id": "#tree_type",
+    "type": "object",
+    "description": "tree control for tags fields",
+    "allOf": [
+      {"$ref": "#common_fields"},
+      {
+        "properties": {
+          ":required_method": {
+            "type": "string"
+          },
+          ":options": {
+            "type": "object",
+            "properties": {
+              ":include": { "type": "array"},
+              ":order": { "type": "array"},
+              ":single_select": { "type": "array"},
+              ":exclude": { "type": "array"}
+            }
+          },
+          ":required_tags": {"type": "array"}
+        }
+      }
+    ]
+  },
+  "method_type": {
+    "$id": "#method_type",
+    "type": "object",
+    "description": "tree control for tags fields",
+    "allOf": [
+      {"$ref": "#common_fields"},
+      {
+        "properties": {
+          ":required_method": { "type": "string"},
+          ":required_regex": { "type": "string"}
+        }
+      }
+    ]
+  }
+}

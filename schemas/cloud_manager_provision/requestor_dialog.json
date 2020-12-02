@@ -1,0 +1,40 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "requestor_dialog.json",
+  "description": "",
+  "type": "object",
+  "properties": {
+    ":description": {
+      "type": "string",
+      "default": "Requestor"
+    },
+    ":fields": {
+      "type": "object",
+      "properties": {
+        ":owner_email":  {
+          "$ref": "fields.json#method_type",
+          "properties": {
+            ":description": {
+              "type": "string",
+              "default":  "E-Mail"
+            }
+          }
+        },
+        ":owner_first_name": {"$ref": "fields.json#string_type"},
+        ":owner_last_name":  {"$ref": "fields.json#string_type"},
+        ":owner_address":  {"$ref": "fields.json#string_type"},
+        ":owner_city":  {"$ref": "fields.json#string_type"},
+        ":owner_state":  {"$ref": "fields.json#string_type"},
+        ":owner_zip":  {"$ref": "fields.json#string_type"},
+        ":owner_country":  {"$ref": "fields.json#string_type"},
+        ":owner_title":  {"$ref": "fields.json#string_type"},
+        ":owner_company":  {"$ref": "fields.json#string_type"},
+        ":owner_department":  {"$ref": "fields.json#string_type"},
+        ":owner_office":  {"$ref": "fields.json#string_type"},
+        ":owner_phone":  {"$ref": "fields.json#string_type"},
+        ":owner_phone_mobile":  {"$ref": "fields.json#string_type"},
+        ":request_notes":  {"$ref": "fields.json#string_type"}
+      }
+    }
+  }
+}

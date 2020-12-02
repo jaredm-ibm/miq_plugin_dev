@@ -1,0 +1,31 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "hardware_dialog.json",
+  "properties": {
+    ":description": {
+      "type": "string",
+      "default": "Profile"
+    },
+    ":fields": {
+      "type": "object",
+      "required": [],
+      "properties": {
+        ":instance_type": { "$ref": "fields.json#string_type" },
+        ":sys_type": { "$ref": "fields.json#string_type" },
+        ":cloud_volumes": { "$ref": "fields.json#string_type" },
+        ":storage_type": { "$ref": "fields.json#string_type" },
+        ":number_of_cpus": {"$ref": "fields.json#string_type"},
+        ":entitled_processors": {"$ref": "fields.json#string_type"},
+        ":vm_memory": {"$ref": "fields.json#string_type"},
+        ":disk_format": {"$ref": "fields.json#string_type"},
+        ":disk_sparsity": {"$ref": "fields.json#string_type"},
+        ":guest_access_key_pair": {"$ref": "fields.json#string_type"},
+        ":vm_dynamic_memory": {"$ref": "fields.json#string_type"},
+        ":vm_minimum_memory": {"$ref": "fields.json#string_type"},
+        ":vm_maximum_memory": {"$ref": "fields.json#string_type"},
+        ":boot_disk_size": {"$ref": "fields.json#string_type"},
+        ":is_preemptible": {"$ref": "fields.json#string_type"}
+      }
+    }
+  }
+}

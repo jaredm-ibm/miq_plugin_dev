@@ -1,0 +1,127 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://jaredm-ibm.github.io/miq_plugin_dev/schemas/cloud_manager_provision.json",
+  "title": "Root Dialog",
+  "description": "A Manageiq dialog",
+  "type": "object",
+  "definitions": {
+    "container": {
+      "$id": "#container",
+      "type": "object",
+      "description": "",
+      "required": [
+        ":display",
+        ":description"
+      ],
+      "properties": {
+        ":description": {
+          "type":"string"
+        },
+        ":display": {
+          "$ref": "cloud_manager_provision/fields.json#display_field",
+          "default": ":show",
+          "enum": [":show", ":hide"]
+        }
+      }
+    }
+  },
+  "required": [
+    ":name",
+    ":description",
+    ":dialog_type"
+  ],
+  "properties": {
+    ":name": {
+      "type": "string",
+      "default": "miq_cloud_manager_provision_dialogs"
+    },
+    ":description": {
+      "type": "string",
+      "default": "VM Provisioning Dialog"
+    },
+    ":dialog_type": {
+      "type": "string",
+      "default": "MiqProvisionWorkflow"
+    },
+    ":content": {
+      "type": "object",
+      "properties": {
+        ":buttons": {
+          "type": "array",
+          "items":
+            {
+              "type": "string",
+              "enum": [
+                ":cancel",
+                ":submit"
+              ]
+            }
+        },
+        ":dialog_order": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              ":requestor",
+              ":purpose",
+              ":service",
+              ":volumes",
+              ":environment",
+              ":hardware",
+              ":network",
+              ":customize",
+              ":schedule"
+            ]
+          }
+        },
+        ":dialogs": {
+          "type": "object",
+          "properties": {
+            ":requestor": {
+              "allOf": [
+                {"$ref": "#/definitions/container"},
+                {"$ref": "cloud_manager_provision/requestor_dialog.json"}
+              ]
+            },
+            ":purpose": {
+              "allOf": [
+                {"$ref": "#/definitions/container"},
+                {"$ref": "cloud_manager_provision/purpose_dialog.json"}
+              ]
+            },
+            ":customize": {
+              "allOf": [
+                {"$ref": "#/definitions/container"},
+                {"$ref": "cloud_manager_provision/customize_dialog.json"}
+              ]
+            },
+            ":environment": {
+              "allOf": [
+                {"$ref": "#/definitions/container"},
+                {"$ref": "cloud_manager_provision/environment_dialog.json"}
+              ]
+            },
+            ":hardware": {
+              "allOf": [
+                {"$ref": "#/definitions/container"},
+                {"$ref": "cloud_manager_provision/hardware_dialog.json"}
+              ]
+            },
+            ":network": {
+              "allOf": [
+                {"$ref": "#/definitions/container"},
+                {"$ref": "cloud_manager_provision/network_dialog.json"}
+              ]
+            },
+            ":schedule": {
+              "allOf": [
+                {"$ref": "#/definitions/container"},
+                {"$ref": "cloud_manager_provision/schedule_dialog.json"}
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

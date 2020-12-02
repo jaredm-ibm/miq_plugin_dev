@@ -1,0 +1,19 @@
+{
+"schema": "http://json-schema.org/draft-07/schema#",
+"id": "network_dialog.json",
+"properties": {
+  ":description": {
+    "type": "string",
+    "default": "Network"
+  },
+  ":fields": {
+    "type": "object",
+    "required": [],
+    "properties": {
+      ":vlan": {"$ref": "fields.json#string_type"},
+      ":mac_address": {"$ref": "fields.json#string_type"},
+      ":public_network": {"$ref": "fields.json#string_type"}
+      }
+    }
+  }
+}

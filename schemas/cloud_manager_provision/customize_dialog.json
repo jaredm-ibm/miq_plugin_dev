@@ -1,0 +1,32 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "description": "",
+  "type": "object",
+  "properties": {
+    ":description": {
+      "$ref": "fields.json#description_field",
+      "default": "Customization"
+    },
+    ":fields": {
+      ":hostname": {
+        "type": "string"
+      },
+      ":description": {
+        "type": "string",
+        "default": "Host Name"
+      },
+      ":required": {
+        "type": "boolean",
+        "default": false
+      },
+      ":display": {
+        "type": "string",
+        "default": ":edit"
+      },
+      ":data_type": {
+        "type": "string",
+        "default": ":string"
+      }
+    }
+  }
+}
