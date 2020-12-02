@@ -1,6 +1,6 @@
 {
-  "schema": "http://json-schema.org/draft-07/schema#",
-  "id": "schedule_dialog.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "schedule_dialog.json",
   "properties": {
     ":description": { "type": "string", "default": "Schedule"},
     ":fields": {

@@ -1,0 +1,13 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "service_dialog.json",
+  "properties": {
+    ":description": { "type": "string", "default": "General"},
+    ":fields": {
+      "type": "object",
+      "required": [],
+      "properties": {
+
+      }
+  }
+}

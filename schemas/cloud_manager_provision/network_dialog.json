@@ -1,6 +1,6 @@
 {
-"schema": "http://json-schema.org/draft-07/schema#",
-"id": "network_dialog.json",
+"$schema": "http://json-schema.org/draft-07/schema#",
+"$id": "network_dialog.json",
 "properties": {
   ":description": {
     "type": "string",
