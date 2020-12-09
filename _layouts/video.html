@@ -1,0 +1,9 @@
+---
+layout: page
+---
+
+<h2>{{page.title}}</h2>
+<p>{{page.description}}</p>
+<video controls width="{{page.width | default: 1280}}" height="page.height | default: 720" poster="{{ "assets/images/" | append: "miqctl_cover.png" | relative_url }}" >
+  <source src="{{ "assets/videos/" | append: page.video_url | relative_url }}" type="video/mp4">
+</video>
