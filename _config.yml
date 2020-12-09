@@ -1,1 +1,10 @@
+name: Miq Plugin Dev
+title: MIQ
+email: jaredm@ca.ibm.com
+
+description: >- # this means to ignore newlines until "baseurl:"
+  Repo for storing info about plugin dev.
+baseurl: "/miq_plugin_dev" # the subpath of your site, e.g. /blog
+url: "https://jaredm-ibm.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+
 theme: jekyll-theme-minimal
