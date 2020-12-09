@@ -41,18 +41,14 @@
             ":data_type": { "type": "string", "default": ":integer"}
           }
         },
-        ":vn_name": {
+        ":vm_name": {
           "description": "The name of the vms to be created.",
           "type":"object",
           "required": [
             ":description",
-            ":required_method",
-            ":required_regex",
             ":required",
             ":display",
-            ":data_type",
-            ":min_length",
-            ":max_length"
+            ":data_type"
           ],
           "properties": {
             ":description": {"type": "string", "default": "Instance Name"},

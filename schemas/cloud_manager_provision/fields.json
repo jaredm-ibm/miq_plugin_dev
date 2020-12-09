@@ -2,11 +2,13 @@
   "$id": "fields.json",
   "description_field": {
     "$id": "#description_field",
-    "type":"string"
+    "type":"string",
+    "default": "Description of field usage."
   },
   "required_field": {
     "$id": "#required_field",
-    "type":"boolean"
+    "type":"boolean",
+    "default": false
   },
   "display_field": {
     "$id": "#required_field",
@@ -17,24 +19,33 @@
   "data_type_field": {
     "$id": "#data_type_field",
     "type":"string",
+    "default": ":string",
     "enum": [":string", ":boolean", ":integer"]
   },
   "common_fields": {
     "$id": "#common_fields",
     "type": "object",
     "description": "string controls",
+    "required": [
+      ":description",
+      ":required",
+      ":display",
+      ":data_type"
+    ],
     "properties": {
-      ":description": {"$ref": "#description_field"},
-      ":required": {"$ref": "#required_field"},
-      ":display": {"$ref": "#display_field"},
-      ":data_type": {"$ref": "#data_type_field"}
+      ":description": { "$ref": "#description_field" },
+      ":required": { "$ref": "#required_field" },
+      ":display": { "$ref": "#display_field" },
+      ":data_type": { "$ref": "#data_type_field" }
     }
   },
   "string_type": {
     "$id": "#string_type",
     "type": "object",
     "description": "string controls",
-    "$ref": "#common_fields"
+    "allOf": [
+      { "$ref": "#common_fields"}
+    ]
   },
   "tree_type": {
     "$id": "#tree_type",
@@ -69,7 +80,16 @@
       {"$ref": "#common_fields"},
       {
         "properties": {
-          ":required_method": { "type": "string"},
+          ":values_from": {
+            "type": "object",
+            "properties": {
+              ":method": { "type": "string"}
+            },
+          ":values": {
+            "description": "The values to display in the drop-down list. Object with key as index and value as display string.",
+            "type": "object"
+          }
+          },
           ":required_regex": { "type": "string"}
         }
       }
