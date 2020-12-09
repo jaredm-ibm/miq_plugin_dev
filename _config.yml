@@ -11,3 +11,14 @@ theme: jekyll-theme-minimal
 
 sass:
   sass_dir: _sass
+
+show_excerpts: true # set to true to show excerpts on the homepage
+
+# permalink: /posts/:title/
+texture:
+  name: PyCam
+  tagline: CLI for Testing CAM
+  date_format: "%b %-d, %Y"
+  style: blue
+  showNav: true
+  showPicker: false
